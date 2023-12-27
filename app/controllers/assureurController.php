@@ -41,6 +41,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 $assurances = $assuranceService->display();
-
-#----- to handle the upload of logos------
 ?>

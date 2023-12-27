@@ -72,6 +72,3 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/assurance_app/app/views/includeFile/hea
 <?php 
     require_once($_SERVER["DOCUMENT_ROOT"]."/assurance_app/app/views/includeFile/footer.php");
 ?>
-<!-- </body>
-
-</html> -->
