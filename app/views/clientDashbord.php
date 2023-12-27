@@ -30,9 +30,13 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/assurance_app/app/views/includeFile/hea
                 <td class="py-2 px-4 border-b"><?= $client['name']; ?></td>
                 <td class="py-2 px-4 border-b"><?= $client['cin']; ?></td>
                 <td class="py-2 px-4 border-b"><?= $client['number'] ?></td>
-                <td class="py-2 px-4 border-b">
-                    <button class="bg-yellow-500 text-white px-2 py-1 rounded mr-2">Edit</button>
-                    <button class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
+                <td class="py-2 px-4 border-b flex">
+                <button class="bg-yellow-500 text-white px-2 py-1 rounded mr-2">Edit</button>
+                <form action="../controllers/clientController.php" method="post">
+                    <input type="hidden" name="action" value="deleteClient">
+                    <input type="hidden" name="deleteClientId" value="<?= $client['clientId']; ?>">
+                    <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
+                </form>
                 </td>
                 </tr>
                 <?php endforeach; ?>
@@ -41,7 +45,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/assurance_app/app/views/includeFile/hea
     </div>
 
 
-    <div id="addAssuranceModal" class="fixed inset-0 bg-gray-900 bg-opacity-50  items-center flex justify-center">
+    <div id="addAssuranceModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden items-center flex justify-center">
         <div class="bg-white p-8 rounded shadow-lg w-96">
             <h2 class="text-2xl font-bold mb-4">Add Client</h2>
             <form id="" action="../controllers/clientController.php" method="post" enctype="multipart/form-data">

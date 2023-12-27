@@ -63,22 +63,21 @@ class AssuranceService extends Database implements IAssuranceService {
 
     public function delete($assuranceId) {
         $pdo = $this->connect();
-
+    
         try {
             $pdo->beginTransaction();
-
-            $sql ="DELETE FROM Assurance WHERE assuranceId = :assuranceId";
-
+    
+            $sql = "DELETE FROM assurance WHERE assuranceId = :assuranceId";
+    
             $stmt = $pdo->prepare($sql);
             $stmt->bindParam(":assuranceId", $assuranceId, PDO::PARAM_INT);
-
             $stmt->execute();
-
+    
             $pdo->commit();
-
+    
         } catch (PDOException $e) {
             $pdo->rollBack();
-            die("Error: ". $e->getMessage());
+            die("Error: " . $e->getMessage());
         }
     }
 

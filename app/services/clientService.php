@@ -56,16 +56,17 @@ class clientService extends Database implements IClientService {
     }
     function delete($clientId){
         $pdo = $this->connect();
-
-        try{
+    
+        try {
             $pdo->beginTransaction();
-            
-            $sql = "DELETE FROM client WHERE clientId = :clientId";
+    
+            $sql = "DELETE FROM client WHERE clientId = :clientId"; // Use the correct column name
             $stmt = $pdo->prepare($sql);
             $stmt->bindParam(":clientId", $clientId, PDO::PARAM_INT);
             $stmt->execute();
+    
             $pdo->commit();
-        }catch (PDOException $e) {
+        } catch (PDOException $e) {
             $pdo->rollBack();
             die("Error: " . $e->getMessage());
         }

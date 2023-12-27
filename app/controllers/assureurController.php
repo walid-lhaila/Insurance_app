@@ -27,15 +27,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $assuranceService->edit($assurance);
 
-        header("Location: ../views/assuranceDashbord.php");
+        header("Location: ../views/assureurDashbord.php");
         exit;
 
     } else if ($_POST['action'] == "deleteAssurance") {
-        $assuranceId = $_POST["delete_assurance_ID"];
+        $assuranceId = $_POST["deleteAssuranceId"];
 
         $assuranceService->delete($assuranceId);
 
-        header("Location: ../views/assuranceDashbord.php");
+        header("Location: ../views/assureurDashbord.php");
         exit;
     }
 }
