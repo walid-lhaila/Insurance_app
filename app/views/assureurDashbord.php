@@ -49,11 +49,6 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/assurance_app/app/views/includeFile/hea
                                     <input type="hidden" name="deleteAssuranceId" value="<?= $assurance['assuranceId']; ?>">
                                     <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
                                 </form>
-                                <!-- <form action="../controllers/assureurController.php" method="post">
-                                    <input type="hidden" name="action" value="deleteAssurance">
-                                    <input type="hidden" name="deleteAssuranceId" value="<?= $assurance['assuranceId']; ?>">
-                                    <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded" onclick="return confirm('Are you sure you want to delete this assurance?')">Delete</button>
-                                </form> -->
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -61,7 +56,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/assurance_app/app/views/includeFile/hea
             </table>
     </div>
 
-    <div id="addAssuranceModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden  items-center flex justify-center">
+    <div id="addAssuranceModal" class="fixed inset-0 bg-gray-900 bg-opacity-50   items-center flex justify-center">
         <div class="bg-white p-8 rounded shadow-lg w-96">
             <h2 class="text-2xl font-bold mb-4">Add Assurance</h2>
             <form id="addAssuranceForm" action="../controllers/assureurController.php" method="post" enctype="multipart/form-data">

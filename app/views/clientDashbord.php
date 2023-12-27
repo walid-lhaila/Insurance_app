@@ -45,7 +45,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/assurance_app/app/views/includeFile/hea
     </div>
 
 
-    <div id="addAssuranceModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden items-center flex justify-center">
+    <div id="addAssuranceModal" class="fixed inset-0 bg-gray-900 bg-opacity-50  items-center flex justify-center">
         <div class="bg-white p-8 rounded shadow-lg w-96">
             <h2 class="text-2xl font-bold mb-4">Add Client</h2>
             <form id="" action="../controllers/clientController.php" method="post" enctype="multipart/form-data">
