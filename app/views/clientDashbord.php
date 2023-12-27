@@ -2,17 +2,19 @@
  
 require_once($_SERVER["DOCUMENT_ROOT"]."/assurance_app/app/controllers/clientController.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/assurance_app/app/views/includeFile/header.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/assurance_app/app/views/includeFile/sideBar.php");
+
 
 ?>
 
-<div class="flex-1 p-4">
+<div class="flex-1 p-4 ml-[175px]">
         <div class="mb-4 flex justify-between items-center">
             <h2 class="text-2xl font-bold">Client List</h2>
-            <button id="" class="bg-green-400 text-black px-4 py-2 rounded">Add Client</button>
+            <button id="" class="bg-orange-600 text-black px-4 py-2 rounded">Add Client</button>
         </div>
 
     <div>
-        <table id="table" class="min-w-full bg-green-400 rounded-xl">
+        <table id="table" class="min-w-full bg-black text-white rounded-xl">
             <thead>
                 <th>ID</th>
                 <th>NAME</th>
@@ -35,7 +37,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/assurance_app/app/views/includeFile/hea
                 <form action="../controllers/clientController.php" method="post">
                     <input type="hidden" name="action" value="deleteClient">
                     <input type="hidden" name="deleteClientId" value="<?= $client['clientId']; ?>">
-                    <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
+                    <button type="submit" class="bg-red-600 text-white px-2 py-1 rounded">Delete</button>
                 </form>
                 </td>
                 </tr>
@@ -45,7 +47,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/assurance_app/app/views/includeFile/hea
     </div>
 
 
-    <div id="addAssuranceModal" class="fixed inset-0 bg-gray-900 bg-opacity-50  items-center flex justify-center">
+    <div id="addAssuranceModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden items-center flex justify-center">
         <div class="bg-white p-8 rounded shadow-lg w-96">
             <h2 class="text-2xl font-bold mb-4">Add Client</h2>
             <form id="" action="../controllers/clientController.php" method="post" enctype="multipart/form-data">

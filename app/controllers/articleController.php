@@ -18,6 +18,8 @@
 
         header("Location: ../views/articleDashbord.php");
         exit();
+
+
         }else if($_POST['action'] == "editArticle"){
 
         $articleId = $_POST['articleId'];

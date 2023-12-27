@@ -2,10 +2,10 @@
  
 require_once($_SERVER["DOCUMENT_ROOT"]."/assurance_app/app/controllers/assureurController.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/assurance_app/app/views/includeFile/header.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/assurance_app/app/views/includeFile/sideBar.php");
+
 
 ?>
-
-<body class="font-sans antialiased bg-gray-100 flex h-screen">
 <!-- <div class="bg-yellow-400 text-black w-1/6 p-4">
     <h1 class="text-2xl font-bold mb-4">Insurance</h1>
     <ul class="space-y-2">
@@ -17,14 +17,14 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/assurance_app/app/views/includeFile/hea
     </ul>
 </div> -->
 
-    <div class="flex-1 p-4">
+    <div class="flex-1 p-4 ml-[175px]">
         <div class="mb-4 flex justify-between items-center">
             <h2 class="text-2xl font-bold">Assurances List</h2>
-            <button id="addAssuranceBtn" class="bg-green-400 text-black px-4 py-2 rounded">Add Assurance</button>
+            <button id="addAssuranceBtn" class="bg-orange-600 text-black px-4 py-2 rounded">Add Assurance</button>
         </div>
 
         
-            <table id="table" class="min-w-full bg-green-400 rounded-xl">
+            <table id="table" class="min-w-full bg-black text-white rounded-xl">
                 <thead>
                     <tr>
                         <th class="py-2 px-4 border-b">ID</th>
@@ -47,7 +47,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/assurance_app/app/views/includeFile/hea
                                 <form action="../controllers/assureurController.php" method="post">
                                     <input type="hidden" name="action" value="deleteAssurance">
                                     <input type="hidden" name="deleteAssuranceId" value="<?= $assurance['assuranceId']; ?>">
-                                    <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
+                                    <button type="submit" class="bg-red-600 text-white px-2 py-1 rounded">Delete</button>
                                 </form>
                             </td>
                         </tr>
@@ -56,7 +56,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/assurance_app/app/views/includeFile/hea
             </table>
     </div>
 
-    <div id="addAssuranceModal" class="fixed inset-0 bg-gray-900 bg-opacity-50   items-center flex justify-center">
+    <div id="addAssuranceModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden  items-center flex justify-center">
         <div class="bg-white p-8 rounded shadow-lg w-96">
             <h2 class="text-2xl font-bold mb-4">Add Assurance</h2>
             <form id="addAssuranceForm" action="../controllers/assureurController.php" method="post" enctype="multipart/form-data">

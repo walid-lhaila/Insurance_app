@@ -27,10 +27,10 @@ try {
             articleId INT PRIMARY KEY AUTO_INCREMENT,
             name VARCHAR(255),
             description VARCHAR(300),
-            clientId VARCHAR(200),
-            assuranceId VARCHAR(200),
-            FOREIGN KEY (clientId) REFERENCES Client(name),
-            FOREIGN KEY (assuranceId) REFERENCES Assurance(name)
+            clientId INT,
+            assuranceId INT,
+            FOREIGN KEY (clientId) REFERENCES Client(clientId),
+            FOREIGN KEY (assuranceId) REFERENCES Assurance(assuranceId)
         );
 
         CREATE TABLE IF NOT EXISTS Claim (
